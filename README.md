@@ -1,2 +1,2 @@
 # becks-cognitive-triad-classification-language-models
-In this repository, we have demonstrated the application of cost-efficient language models for classification of socia media messages as per aspect-sentiment (Beck's cognitive triad) by evaluating seven models/ five prompt designs (as well as ensembles/ combined prompts) to classify 900 data points from the gold standard Cognitive triad dataset test set.
+In this repository, we have demonstrated the application of cost-efficient language models for classification of social media messages as per aspect-sentiment (Beck's cognitive triad) by evaluating seven models/ five prompt designs (as well as ensembles/ combined prompts) for classifying 900 data points from the gold standard Cognitive triad data test set.
