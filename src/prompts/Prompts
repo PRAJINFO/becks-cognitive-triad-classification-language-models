@@ -1,0 +1,136 @@
+1. Zero-shot
+2. Zero-shot + Guide
+3. Few-shot
+4. Role 
+5. Chain-of-thought
+
+
+ZERO-SHOT PROMPT = 
+"""
+Output rule:
+Return exactly one JSON line in this format:
+{"label_id": "X", "label_name": "label_name"}
+
+Example format only (not a hint):
+{"label_id": "2", "label_name": "negative future"}
+
+Now classify the following message:
+{sentence}
+"""
+
+
+ZERO-SHOT + GUIDE PROMPT = 
+"""
+Classify the following sentence into exactly one of the six categories below
+according to Beck’s Cognitive Triad categories.
+
+Categories:
+0: negative self
+1: positive self
+2: negative future
+3: positive future
+4: negative world
+5: positive world
+
+Guidelines:
+
+- "Self" refers to thoughts about oneself (e.g., "I am useless.")
+- "World" refers to thoughts about others, society, or environment (e.g., "People are cruel.")
+- "Future" refers to expectations or predictions (e.g., "Things will never get better.")
+- "Negative" means pessimistic, self-blaming, hopeless, or critical.
+- "Positive" means optimistic, self-affirming, hopeful, or appreciative.
+- Choose only one label per input.
+- Do not explain or add commentary.
+
+Output rule:
+Return exactly one JSON line in this format:
+{"label_id": "X", "label_name": "label_name"}
+
+Example format only (not a hint):
+{"label_id": "2", "label_name": "negative future"}
+
+Now classify the following message:
+{sentence}
+"""
+
+
+FEW-SHOT = 
+"""
+Classify the given text according to Beck’s Cognitive Triad categories. Choose one from:
+        0: negative self
+        1: positive self
+        2: negative future
+        3: positive future
+        4: negative world
+        5: positive world
+
+Output rule:
+Return exactly one JSON line in this format:
+{"label_id": "X", "label_name": "label_name"}
+
+Example format only (not a hint):
+{"label_id": "2", "label_name": "negative future"}
+
+Examples:
+
+Input: "I hate myself."
+Output:
+{"label_id": "0", "label_name": "negative self"}
+
+Input: "People are kind to me."
+Output:
+{"label_id": "5", "label_name": "positive world"}
+
+Input: "Things will never improve."
+Output:
+{"label_id": "2", "label_name": "negative future"}
+
+Now classify the following message:
+"""
+
+
+ROLE PROMPT = 
+"""
+You are a high-skilled clinical psychology analyst trained in Beck’s Cognitive Theory.
+Classify the following message based on your professional understanding.
+
+0: negative self
+1: positive self
+2: negative future
+3: positive future
+4: negative world
+5: positive world
+
+Output rule:
+Return exactly one JSON line in this format:
+{"label_id": "X", "label_name": "label_name"}
+"""
+
+
+CHAIN-OF-THOUGHT PROMPT = 
+"""
+Classify the following sentence into exactly one of the six categories below according to Beck’s Cognitive Triad categories:
+ 
+ 0: negative self
+ 1: positive self
+ 2: negative future
+ 3: positive future
+ 4: negative world
+ 5: positive world
+ 
+To ensure a correct and consistent answer, please:
+1.	Carefully consider the emotional polarity (positive or negative) in the input.
+2.	Identify whether the message is about the self, the world, or the future.
+3.	Decide the most appropriate label and explain your reasoning step by step in plain text.
+
+Now classify the following message based on the rules below.
+
+Output rule:
+ Return exactly one JSON line in this format:
+ {"label_id": "X", "label_name": "label_name"}
+Example (for reference only, do not use as output for actual sentences):
+ {"label_id": "2", "label_name": "negative future"}
+"""
+
+
+
