@@ -1,1 +1,38 @@
+1. Zero-shot
+2. Zero-shot + Guide
+3. Few-shot
+4. Role 
+5. Chain-of-thought
+
+
+ZERO-SHOT PROMPT = 
+"""
+
+"""
+
+
+ZERO-SHOT + GUIDE PROMPT = 
+"""
+
+"""
+
+
+FEW-SHOT = 
+"""
+
+"""
+
+
+ROLE PROMPT = 
+"""
+
+"""
+
+
+CHAIN-OF-THOUGHT PROMPT = 
+"""
+
+"""
+
+
 
